@@ -1,0 +1,26 @@
+{
+  "builtin": "schedule",
+  "args": [
+    "CRON_TZ=Europe/Paris 0 8,12,16,20 * * *",
+    "agentapi",
+    "new-conversation",
+    "--",
+    "Execute the scheduled 4x/day job discovery routine for Xiao: 1. Fetch fresh postings across Welcome to the Jungle, Indeed France, HelloWork, France Travail, and APEC matching Xiao's target roles (Digital Marketing Assistant, E-Commerce Coordinator, Social Media Specialist). 2. Parse candidate CV (cv.pdf) and evaluate each listing from 1.0 to 10.0 using gemini-2.5-flash with time.sleep(4) pacing (15 RPM limit). 3. Synthesize targeted cover letters and actionable CV tailoring suggestions for opportunities with score >= 8.0. 4. Record new matches in the Job Hunter Agent for Xiao dataset and prepare Gmail draft dispatches."
+  ],
+  "restart_policy": "always",
+  "display_name": "Job Hunter Agent for Xiao",
+  "description": "Scrapes 5 French job platforms (Welcome to the Jungle, Indeed, HelloWork, France Travail, APEC) 4 times a day (08:00, 12:00, 16:00, 20:00 Europe/Paris), computes 1-10 CV compatibility via gemini-2.5-flash, and prepares applications.",
+  "agent_permissions": {
+    "access_grants": [
+      "read_file(/Users/zhangxiao/.gemini/antigravity/scratch/job-hunter-agent-for-xiao)",
+      "write_file(/Users/zhangxiao/.gemini/antigravity/scratch/job-hunter-agent-for-xiao)",
+      "read_url(welcometothejungle.com)",
+      "read_url(apec.fr)",
+      "read_url(hellowork.com)",
+      "read_url(indeed.fr)",
+      "read_url(francetravail.fr)",
+      "mcp(gmail/send_email)",
+      "mcp(gmail/create_draft)"
+    ]
+  }
+}
