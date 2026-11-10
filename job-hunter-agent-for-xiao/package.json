@@ -1,0 +1,29 @@
+{
+  "name": "job-hunter-agent-for-xiao",
+  "version": "1.0.0",
+  "description": "Job Hunter Agent for Xiao - Autonomous AI recruitment agent and dark-theme glassmorphism web dashboard",
+  "private": true,
+  "homepage": "https://github.com/your-username/job-hunter-agent-for-xiao",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/job-hunter-agent-for-xiao.git"
+  },
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 .",
+    "build": "echo 'Static build ready for Vercel'",
+    "deploy:vercel": "bash scripts/deploy_vercel.sh",
+    "publish:github": "bash scripts/publish_to_github.sh"
+  },
+  "keywords": [
+    "job-hunter-agent-for-xiao",
+    "ai-agent",
+    "recruitment-dashboard",
+    "glassmorphism",
+    "wttj",
+    "apec",
+    "career-agent"
+  ],
+  "author": "Xiao ZHANG",
+  "license": "MIT"
+}
